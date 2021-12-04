@@ -5,9 +5,12 @@ import { MainComponent } from './pages/main/main.component';
 import { ObjectiveComponent } from './pages/objective/objective.component';
 import { RegionComponent } from './pages/region/region.component';
 
+import { HomeDashboardsComponent } from './pages/home-dashboards/home-dashboards.component';
+
 const routes:Routes =[
   {
     path:'',
+    component:HomeDashboardsComponent,
     children:[
       {
         path: 'main',
