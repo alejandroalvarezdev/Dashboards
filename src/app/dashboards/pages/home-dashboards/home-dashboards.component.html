@@ -1,9 +1,34 @@
-<h2>Home Dashboards Component</h2>
-<hr>
-<router-outlet></router-outlet>
+<h2>DashHome</h2>
+
+<mat-sidenav-container fullscreen>
+    <mat-sidenav #sidenav mode="push"> 
+        <mat-toolbar> 
+            <span>Dashboards</span>
+            <button mat-icon-button (click)="sidenav.toggle()" >
+                <mat-icon>menu</mat-icon>
+            </button>
+        </mat-toolbar>
+        
+        <mat-nav-list>
+            <a routerLink="/dashboards/main" mat-list-item (click)="sidenav.toggle()" >  <mat-icon mat-list-icon>insights</mat-icon> <span>Main Dashboard </span> </a>
+            <a routerLink="/dashboards/objective" mat-list-item (click)="sidenav.toggle()" >  <mat-icon mat-list-icon>my_location</mat-icon> <span>Por Objetivo </span> </a>
+            <a routerLink="/dashboards/region" mat-list-item (click)="sidenav.toggle()" >  <mat-icon mat-list-icon>place</mat-icon> <span>Por Region </span> </a>
+        </mat-nav-list>
+
+    </mat-sidenav>
+
+    <mat-toolbar> 
+        <button mat-button (click)="sidenav.toggle()" >
+            <mat-icon>menu</mat-icon>
+        </button>    
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+</mat-sidenav-container>
+<!-- 
 
 <ul>
     <li><a routerLink="/dashboards/main">Ir a Main</a></li>
     <li><a routerLink="/dashboards/objective">Ir a Objective</a></li>
     <li><a routerLink="/dashboards/region">Ir a Region</a></li>
-</ul> 
+</ul>  -->
+

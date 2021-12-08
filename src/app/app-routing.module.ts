@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HomeDashboardsComponent } from './dashboards/pages/home-dashboards/home-dashboards.component';
 import { HomeComponent } from './shared/home/home.component';
 
 const routes: Routes = [
@@ -15,12 +16,12 @@ const routes: Routes = [
 
   {
     path:'home',
-    component:HomeComponent
+    component:HomeDashboardsComponent
   },
 
   {
     path: '**',
-    component:HomeComponent 
+    component:HomeDashboardsComponent 
   }
 ];
 

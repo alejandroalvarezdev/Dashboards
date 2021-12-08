@@ -5,6 +5,7 @@ import { ObjectiveComponent } from './pages/objective/objective.component';
 import { RegionComponent } from './pages/region/region.component';
 import { DashboardsRoutingModule } from './dashboards-routing.module';
 import { HomeDashboardsComponent } from './pages/home-dashboards/home-dashboards.component';
+import { MaterialModule } from '../material/material.module';
 
 
 
@@ -19,7 +20,8 @@ import { HomeDashboardsComponent } from './pages/home-dashboards/home-dashboards
   ],
   imports: [
     CommonModule,
-    DashboardsRoutingModule
+    DashboardsRoutingModule,
+    MaterialModule
   ]
 })
 export class DashboardsModule { }
