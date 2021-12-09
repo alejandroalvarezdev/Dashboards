@@ -1,8 +1,10 @@
+
 .mat-toolbar{
     background-color: #37B39C;
 }
 .mat-drawer-container{
     background-color: white;
+    color:black;
 }
 
 .mat-list-item{
