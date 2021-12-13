@@ -1,15 +1,29 @@
 
-.mat-toolbar{
-    background-color: #37B39C;
-}
+
+
+/* contenedor general */
 .mat-drawer-container{
-    background-color: white;
+    background-color: #F7F7F7;
     color:black;
+    
 }
 
-.mat-list-item{
+/* Toolbar */
+
+.mat-toolbar{
+    background-color: #37B39C;
+    font-family: 'Dosis', sans-serif;
+}
+
+/* lista lateral de elementos */
+.mat-list-item{ 
     color: #1b6463;
-} 
+    font-family: 'Dosis', sans-serif;
+}
+
+/* contenedor de lista lateral  */
+
 .mat-drawer {
-    background-color: white;
+    background-color: #F7F7F7;
+    
 }
