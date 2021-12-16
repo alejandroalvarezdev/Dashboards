@@ -11,8 +11,8 @@ export class HomeDashboardsComponent implements OnInit {
   constructor(private certificationService:CertificationsService) { }
 
   ngOnInit(): void {
-    this.certificationService.getCertifcations().subscribe((resp)=> {
-      console.warn(resp.kind_of_formation);
+    this.certificationService.getCertifications().subscribe((resp)=> {
+      // console.warn(resp.kind_of_formation);
       
     })
   }

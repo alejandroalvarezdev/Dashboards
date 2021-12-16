@@ -8,13 +8,15 @@ import { environment } from 'src/environments/environment';
 export class CertificationsService {
 private path:string; 
 private httpHeaders = new HttpHeaders; 
+
+
   constructor(
     private http:HttpClient
   ) {
     this.path = environment.apiUrl; 
   }
   
-  getCertifcations ():Observable<any>  {
+  getCertifications ():Observable<any>  {
     const body = {
       modulo: "Kind_of_Formation"
       
