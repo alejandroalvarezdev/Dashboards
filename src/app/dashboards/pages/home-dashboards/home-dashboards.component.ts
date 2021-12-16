@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CertificationsService } from 'src/app/services/certifications.service';
 
 @Component({
   selector: 'app-home-dashboards',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeDashboardsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private certificationService:CertificationsService) { }
 
   ngOnInit(): void {
+    this.certificationService.getCertifcations().subscribe((resp)=> {
+      console.warn(resp.kind_of_formation);
+      
+    })
   }
 
 }

@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './shared/home/home.component';
 import { MaterialModule } from './material/material.module';
+import {  HttpClientModule } from '@angular/common/http';
 
 
 
@@ -19,7 +20,8 @@ import { MaterialModule } from './material/material.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule
     
   ],
   providers: [],
