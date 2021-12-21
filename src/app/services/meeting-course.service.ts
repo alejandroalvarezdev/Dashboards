@@ -1,11 +1,14 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { Observable } from 'rxjs';
+
+
 @Injectable({
   providedIn: 'root'
 })
-export class CertificationsService {
+export class MeetingCourseService {
 private path:string; 
 private httpHeaders = new HttpHeaders; 
 
@@ -15,17 +18,14 @@ private httpHeaders = new HttpHeaders;
   ) {
     this.path = environment.apiUrl; 
   }
-  
-  getCertifications ():Observable<any>  {
+
+  getMeetingCourse():Observable<any>  {
     const body = {
       
-      modulo:"Kind_of_Formation"
+      modulo:"Meeting_Course"
     }
     return this.http.post<any>(this.path,body,{
       headers:this.httpHeaders
     })
   }
-
-  
-
 }
