@@ -46,3 +46,4 @@ Thumbs.db
 
 #conflicts
 package.json
+package-lock.json

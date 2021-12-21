@@ -25,5 +25,23 @@ private httpHeaders = new HttpHeaders;
       headers:this.httpHeaders
     })
   }
+  getMeetingCourse ():Observable<any>  {
+    const body = {
+      modulo: "Meeting_Course"
+      
+    }
+    return this.http.post<any>(this.path,body,{
+      headers:this.httpHeaders
+    })
+  }
+  getObjective ():Observable<any>  {
+    const body = {
+      modulo: "Objective1"
+      
+    }
+    return this.http.post<any>(this.path,body,{
+      headers:this.httpHeaders
+    })
+  }
 
 }
