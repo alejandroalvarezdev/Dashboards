@@ -14,7 +14,8 @@ export class MainComponent implements OnInit {
   resultadosMeeting:any[] = [];
   resultadosObjectives:any[] = [];
 
-  sumaComplete:number=0;
+  sumaCert:number=0;
+  sumMcObj:number =0; 
 
   constructor(private certificationService:CertificationsService,
               private meetingCourseService:MeetingCourseService,
@@ -56,15 +57,33 @@ export class MainComponent implements OnInit {
       
             
       //WorkZone {
-        
-        //Suma En Certificaciones los que tienen un objetivo
+
+        //Suma En Meeting Course los que tienen un objetivo
         this.resultadosMeeting.forEach(element => {
           if (element.Objective != null ) {
-          this.sumaComplete = this.sumaComplete +1;
-          console.log(element.Person);
-          
+          this.sumMcObj = this.sumMcObj +1;
+          // console.log("Suma Cert/Objective", this.sumMcObj);
+          // console.log(element.Person);
           }
         });
+        console.log("Meeting Course Obj Sum",this.sumMcObj);
+        
+
+        //Suma en Certifications los que tienen un objetivo
+        this.resultadosCert.forEach(element => {
+          if (element.Objective !== null) { 
+            this.sumaCert = this.sumaCert +1;
+          }
+        });
+        console.log("Certifications Obj Sum",this.sumaCert);
+        
+        // this.resultadosObjectives.forEach(element => {
+        //   this.resultadosObjectives[0].tabularSections["Certifications requirements"].forEach((element: any) => {
+        //     console.log(element);
+            
+        //   });
+        // });
+
 
       //WokZone End }
 
