@@ -7,7 +7,7 @@ import { CertificationsService } from 'src/app/services/certifications.service';
   styleUrls: ['./home-dashboards.component.css'],
 })
 export class HomeDashboardsComponent implements OnInit, AfterViewInit{
-
+//nothing
   objective_obj: any;
   meeting_list:any;
   certification_object:any;
