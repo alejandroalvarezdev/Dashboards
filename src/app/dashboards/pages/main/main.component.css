@@ -1,0 +1,42 @@
+
+
+.mainContainer{
+    display: flex;
+    flex-direction: column;
+    
+    
+
+}
+
+.cardContainer{
+    display: flex;
+    justify-content:flex-start;
+    flex-wrap: wrap;
+    gap: 12px;
+    width: 100%;
+    
+    background-color: blue;
+    
+}
+
+.Title{
+    color: #1b6463;
+    font-family: 'Lato', sans-serif;
+    font-size: 2em;
+    margin: 1em;
+}
+.cards{
+    height: fit-content;
+    max-width: 20em;
+    max-height: 24em;
+    
+    
+}
+.cards-header-image {
+    background-image: url("/src/assets/chart.png");
+    background-size: cover;
+}
+.beyond-header-image {
+    background-image: url("/assets/mexico-circular.png");
+    background-size: cover;
+}

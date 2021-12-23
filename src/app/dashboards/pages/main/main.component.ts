@@ -1,3 +1,4 @@
+import { compileDeclareClassMetadata } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { CertificationsService } from 'src/app/services/certifications.service'
 import { MeetingCourseService } from 'src/app/services/meeting-course.service';
@@ -16,6 +17,9 @@ export class MainComponent implements OnInit {
 
   sumaCert:number=0;
   sumMcObj:number =0; 
+
+  sumCertObj:number=0;
+  
 
   constructor(private certificationService:CertificationsService,
               private meetingCourseService:MeetingCourseService,
@@ -83,6 +87,20 @@ export class MainComponent implements OnInit {
             
         //   });
         // });
+
+      //Conteo de Certificaciones que tienen un objetivo
+      
+      this.resultadosCert.forEach(elementCert => {
+        this.resultadosObjectives.forEach(element => {
+          if (elementCert.Objective==element.Name) {
+            this.sumCertObj= this.sumCertObj +1;
+            // console.warn(this.sumCertObj);
+          }
+          
+        });
+        
+        
+      });
 
 
       //WokZone End }
