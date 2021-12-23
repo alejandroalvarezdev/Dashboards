@@ -12,12 +12,19 @@
     display: flex;
     justify-content:flex-start;
     flex-wrap: wrap;
-    gap: 12px;
     width: 100%;
-    
-    background-color: blue;
-    
 }
+
+
+.mat-card:nth-child(1) {
+    margin-left: 15px;
+    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    display: block;
+    position: relative;
+    padding: 16px;
+    border-radius: 4px;
+}
+
 
 .Title{
     color: #1b6463;
@@ -38,5 +45,10 @@
 }
 .beyond-header-image {
     background-image: url("/assets/mexico-circular.png");
+    background-size: cover;
+}
+
+.beyondUsa-header-image{
+    background-image: url("/assets/usaTransparent.jpg");
     background-size: cover;
 }

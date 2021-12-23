@@ -1,4 +1,3 @@
-import { compileDeclareClassMetadata } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { CertificationsService } from 'src/app/services/certifications.service'
 import { MeetingCourseService } from 'src/app/services/meeting-course.service';
