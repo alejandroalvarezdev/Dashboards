@@ -69,7 +69,7 @@ export class MainComponent implements OnInit {
           // console.log(element.Person);
           }
         });
-        console.log("Meeting Course Obj Sum",this.sumMcObj);
+        // console.log("Meeting Course Obj Sum",this.sumMcObj);
         
 
         //Suma en Certifications los que tienen un objetivo
@@ -78,7 +78,7 @@ export class MainComponent implements OnInit {
             this.sumaCert = this.sumaCert +1;
           }
         });
-        console.log("Certifications Obj Sum",this.sumaCert);
+        // console.log("Certifications Obj Sum",this.sumaCert);
         
         // this.resultadosObjectives.forEach(element => {
         //   this.resultadosObjectives[0].tabularSections["Certifications requirements"].forEach((element: any) => {

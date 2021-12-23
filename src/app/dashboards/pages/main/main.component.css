@@ -17,13 +17,46 @@
 
 
 .mat-card:nth-child(1) {
-    margin-left: 15px;
+    margin-left: 50px;
+    margin-bottom: 10px;
     transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
     display: block;
     position: relative;
     padding: 16px;
     border-radius: 4px;
+    box-shadow: -30px 30px 20px rgba(0, 0, 0, 0.3);
 }
+.mat-card {
+    background: #1b6463;
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+}
+.mat-button, .mat-icon-button, .mat-stroked-button, .mat-flat-button {
+    box-sizing: border-box;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    -webkit-tap-highlight-color: transparent;
+    display: inline-block;
+    white-space: nowrap;
+    text-decoration: none;
+    vertical-align: baseline;
+    text-align: center;
+    margin: 0;
+    min-width: 64px;
+    line-height: 36px;
+    padding: 0 16px;
+    border-radius: 4px;
+    overflow: visible;
+    font-family: 'Lato', sans-serif;
+}
+
+
 
 
 .Title{

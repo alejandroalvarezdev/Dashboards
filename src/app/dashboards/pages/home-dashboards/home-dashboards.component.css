@@ -5,6 +5,7 @@
 .mat-drawer-container{
     background-color: #F7F7F7;
     color:black;
+    height: 110vh;
     
 }
 
@@ -19,7 +20,10 @@
 .mat-list-item{ 
     color: #1b6463;
     font-family: 'Dosis', sans-serif;
+    
 }
+
+
 
 /* contenedor de lista lateral  */
 
