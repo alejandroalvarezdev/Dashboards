@@ -73,11 +73,11 @@ export class MainComponent implements OnInit {
         
 
         //Suma en Certifications los que tienen un objetivo
-        this.resultadosCert.forEach(element => {
-          if (element.Objective !== null) { 
-            this.sumaCert = this.sumaCert +1;
-          }
-        });
+        // this.resultadosCert.forEach(element => {
+        //   if (element.Objective !== null) { 
+        //     this.sumaCert = this.sumaCert +1;
+        //   }
+        // });
         // console.log("Certifications Obj Sum",this.sumaCert);
         
         // this.resultadosObjectives.forEach(element => {
@@ -89,17 +89,17 @@ export class MainComponent implements OnInit {
 
       //Conteo de Certificaciones que tienen un objetivo
       
-      this.resultadosCert.forEach(elementCert => {
-        this.resultadosObjectives.forEach(element => {
-          if (elementCert.Objective==element.Name) {
-            this.sumCertObj= this.sumCertObj +1;
-            // console.warn(this.sumCertObj);
-          }
+      // this.resultadosCert.forEach(elementCert => {
+      //   this.resultadosObjectives.forEach(element => {
+      //     if (elementCert.Objective==element.Name) {
+      //       this.sumCertObj= this.sumCertObj +1;
+            
+      //     }
           
-        });
+      //   });
         
         
-      });
+      // });
 
 
       //WokZone End }
