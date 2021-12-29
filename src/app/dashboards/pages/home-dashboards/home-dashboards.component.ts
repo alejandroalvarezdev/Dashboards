@@ -50,6 +50,11 @@ export class HomeDashboardsComponent implements OnInit, AfterViewInit {
         )
           ? 0
           : this.region_percent(this.objective_obj['kof_objective1'][it_obj]),
+        not_achieved: isNaN(
+            this.region_percent(this.objective_obj['kof_objective1'][it_obj])
+          )
+            ? 0
+            : (-1*(this.region_percent(this.objective_obj['kof_objective1'][it_obj])-100)),
       });
     }
     return tmp;
