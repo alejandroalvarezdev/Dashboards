@@ -7,6 +7,9 @@ import { DashboardsRoutingModule } from './dashboards-routing.module';
 import { HomeDashboardsComponent } from './pages/home-dashboards/home-dashboards.component';
 import { MaterialModule } from '../material/material.module';
 
+import { HighchartsChartModule } from 'highcharts-angular';
+import { FormsModule } from '@angular/forms';
+
 
 
 
@@ -21,7 +24,9 @@ import { MaterialModule } from '../material/material.module';
   imports: [
     CommonModule,
     DashboardsRoutingModule,
-    MaterialModule
+    MaterialModule,
+    HighchartsChartModule,
+    FormsModule
   ]
 })
 export class DashboardsModule { }
