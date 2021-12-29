@@ -13,6 +13,10 @@ export class HomeDashboardsComponent implements OnInit, AfterViewInit {
   meeting_list: any;
   certification_object: any;
   constructor(private certificationService: CertificationsService) {
+  
+  }
+  ngAfterViewInit() {}
+  ngOnInit(): void {
     this.certificationService.getMeetingCourse().subscribe((resp) => {
       this.meeting_list = JSON.parse(JSON.stringify(resp));
       this.certificationService.getObjective().subscribe((resp) => {
@@ -21,12 +25,13 @@ export class HomeDashboardsComponent implements OnInit, AfterViewInit {
           this.certification_object = JSON.parse(JSON.stringify(resp));
           //console.log(this._getObjinfo());
           //console.log(this._getReginfo());
+        this._getReginfo();
         });
       });
     });
+    
+    
   }
-  ngAfterViewInit() {}
-  ngOnInit(): void {}
   _metodop() {
     console.log(this.objective_obj);
     console.log(this.meeting_list);
@@ -52,7 +57,8 @@ export class HomeDashboardsComponent implements OnInit, AfterViewInit {
           : this.region_percent(this.objective_obj['kof_objective1'][it_obj]),
       });
     }
-    return tmp;
+    return console.warn(tmp);
+    
   }
   region_percent(itm_obj: any) {
     var total_mc = 0;

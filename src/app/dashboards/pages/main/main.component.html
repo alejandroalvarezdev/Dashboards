@@ -4,18 +4,22 @@
     <div class="mexContainer">
 
         <div class="Title">México</div>
-        <div class="cardContainer"><div class="cards" *ngFor="let result of resultadosObjectives">
-            <!-- <p *ngIf="result.Status == 'Complete'">{{result.Status}} - {{result.Person}}     </p> -->
-            <!-- <p>{{result.Name}}</p> -->
-            <mat-card *ngIf="result.Region.includes('México')">
+        <div class="cardContainer"><div class="cards" *ngFor="let resultado of array3; let i= index"  >
+            
+            <mat-card *ngIf="resultado.region.includes('610005000002994805')"> 
+            
                 <mat-card-header>
                     <div mat-card-avatar class="beyond-header-image"></div>
-                    <mat-card-title>{{result.Name}}</mat-card-title>
-                    <mat-card-subtitle>{{result.Level}}</mat-card-subtitle>
+                    <mat-card-title>{{resultado.name}}</mat-card-title>
+                    <mat-card-subtitle>{{resultado.level}}</mat-card-subtitle>
                 </mat-card-header>
         
-                <mat-card-content>
-                    <img mat-card-image src="assets/chart.png" alt="">
+                <mat-card-content >
+                        
+                        <highcharts-chart
+                            [Highcharts] = "highcharts" 
+                            [options] = resultado.chart>
+                        </highcharts-chart> 
                 </mat-card-content>
                 
                 <mat-card-actions>
@@ -31,18 +35,20 @@
     
     <div class="usaContainer">
         <div class="Title">USA</div>
-        <div class="cardContainer"><div class="cards" *ngFor="let result of resultadosObjectives">
-            <!-- <p *ngIf="result.Status == 'Complete'">{{result.Status}} - {{result.Person}}     </p> -->
-            <!-- <p>{{result.Name}}</p> -->
-            <mat-card *ngIf="result.Region.includes('USA') ">
+        <div class="cardContainer"><div class="cards" *ngFor="let resultado of array3; let i= index" >
+            
+            <mat-card *ngIf="resultado.region.includes('610005000002994781')">
                 <mat-card-header>
                     <div mat-card-avatar class="beyondUsa-header-image"></div>
-                    <mat-card-title>{{result.Name}}</mat-card-title>
-                    <mat-card-subtitle>{{result.Level}}</mat-card-subtitle>
+                    <mat-card-title>{{resultado.name}}</mat-card-title>
+                    <mat-card-subtitle>{{resultado.level}}</mat-card-subtitle>
                 </mat-card-header>
         
                 <mat-card-content>
-                    <img mat-card-image src="assets/chart.png" alt="">
+                    <highcharts-chart
+                    [Highcharts] = "highcharts" 
+                    [options] = resultado.chart>
+                </highcharts-chart> 
                 </mat-card-content>
                 
                 <mat-card-actions>
@@ -55,19 +61,18 @@
 
 
     <div class="pakistanContainer">
-        <div *ngFor="let title of resultadosObjectives">
-            <div *ngIf="title.Region.includes('Pakistan')"> <div class="Title">Pakistan</div></div>
+        <div *ngFor="let region of array3">
+            <div *ngIf="region.region.includes('61000500000299478')" > <div class="Title">Pakistan</div></div>
         
         </div>
         
-        <div class="cardContainer"><div class="cards" *ngFor="let result of resultadosObjectives">
-            <!-- <p *ngIf="result.Status == 'Complete'">{{result.Status}} - {{result.Person}}     </p> -->
-            <!-- <p>{{result.Name}}</p> -->
-            <mat-card *ngIf="result.Region.includes('Pakistan') ">
+        <div class="cardContainer"><div class="cards" *ngFor="let resultado of array3; let i= index">
+            
+            <mat-card *ngIf="resultado.region.includes('61000500000299478')">
                 <mat-card-header>
                     <div mat-card-avatar class="beyondUsa-header-image"></div>
-                    <mat-card-title>{{result.Name}}</mat-card-title>
-                    <mat-card-subtitle>{{result.Level}}</mat-card-subtitle>
+                    <mat-card-title>Result.Name</mat-card-title>
+                    <mat-card-subtitle>Result.Level</mat-card-subtitle>
                 </mat-card-header>
         
                 <mat-card-content>
@@ -82,21 +87,20 @@
         </div>
     </div>
 
-
+<!-- 
     <div class="MEAContainer">
-        <div *ngFor="let title of resultadosObjectives">
-            <div *ngIf="title.Region.includes('MEA')"> <div class="Title">MEA</div></div>
+        <div >
+            <div > <div class="Title">MEA</div></div>
         
         </div>
         
-        <div class="cardContainer"><div class="cards" *ngFor="let result of resultadosObjectives">
-            <!-- <p *ngIf="result.Status == 'Complete'">{{result.Status}} - {{result.Person}}     </p> -->
-            <!-- <p>{{result.Name}}</p> -->
-            <mat-card *ngIf="result.Region.includes('MEA') ">
+        <div class="cardContainer"><div class="cards" >
+            
+            <mat-card>
                 <mat-card-header>
-                    <!-- <div mat-card-avatar class="beyondUsa-header-image"></div> -->
-                    <mat-card-title>{{result.Name}}</mat-card-title>
-                    <mat-card-subtitle>{{result.Level}}</mat-card-subtitle>
+                
+                    <mat-card-title></mat-card-title>
+                    <mat-card-subtitle></mat-card-subtitle>
                 </mat-card-header>
         
                 <mat-card-content>
@@ -110,22 +114,21 @@
             </mat-card>
         </div>
     </div>
-    
+    -->
 
-    <div class="ColombiaContainer">
-        <div *ngFor="let title of resultadosObjectives">
-            <div *ngIf="title.Region.includes('Colombia')"> <div class="Title">Colombia</div></div>
+    <!-- <div class="ColombiaContainer">
+        <div >
+            <div > <div class="Title">Colombia</div></div>
         
         </div>
         
-        <div class="cardContainer"><div class="cards" *ngFor="let result of resultadosObjectives">
-            <!-- <p *ngIf="result.Status == 'Complete'">{{result.Status}} - {{result.Person}}     </p> -->
-            <!-- <p>{{result.Name}}</p> -->
-            <mat-card *ngIf="result.Region.includes('Colombia') ">
+        <div class="cardContainer"><div class="cards" >
+        
+            <mat-card >
                 <mat-card-header>
-                    <!-- <div mat-card-avatar class="beyondUsa-header-image"></div> -->
-                    <mat-card-title>{{result.Name}}</mat-card-title>
-                    <mat-card-subtitle>{{result.Level}}</mat-card-subtitle>
+                    
+                    <mat-card-title></mat-card-title>
+                    <mat-card-subtitle></mat-card-subtitle>
                 </mat-card-header>
         
                 <mat-card-content>
@@ -138,7 +141,7 @@
                 </mat-card-actions>
             </mat-card>
         </div>
-    </div>
+    </div> -->
     
 </div>
 
