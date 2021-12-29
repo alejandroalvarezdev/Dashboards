@@ -302,6 +302,7 @@ achievedNumber:Number = 0;
             style: {
               fontWeight: 'bold',
               color: 'white',
+              fontSize:'7px'
             },
           },
           startAngle: -90,
@@ -317,7 +318,7 @@ achievedNumber:Number = 0;
           innerSize: '50%',
           
           data: [
-            ['main',element.achieved],
+            ['complete',element.achieved],
   
             {
               y: 30,

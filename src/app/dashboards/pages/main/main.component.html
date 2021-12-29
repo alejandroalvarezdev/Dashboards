@@ -56,11 +56,12 @@
                     <button mat-button>Details</button>
                 </mat-card-actions>
             </mat-card>
+
         </div>
     </div>
 
 
-    <div class="pakistanContainer">
+    <!-- <div class="pakistanContainer">
         <div >
             <div > <div class="Title">Pakistan</div></div>
         
@@ -85,26 +86,29 @@
                 </mat-card-actions>
             </mat-card>
         </div>
-    </div>
+    </div> -->
 
 
-    <div class="MEAContainer" *ngIf="!null">
+    <div class="MEAContainer">
         <div >
             <div > <div class="Title">MEA</div></div>
         
         </div>
         
-        <div class="cardContainer"><div class="cards" >
+        <div class="cardContainer"><div class="cards" *ngFor="let resultado of array3; let i= index">
             
-            <mat-card>
+            <mat-card  *ngIf="resultado.region.includes('610005000002994787')">
                 <mat-card-header>
                 
-                    <mat-card-title></mat-card-title>
-                    <mat-card-subtitle></mat-card-subtitle>
+                    <mat-card-title>{{resultado.name}}</mat-card-title>
+                    <mat-card-subtitle>{{resultado.level}}</mat-card-subtitle>
                 </mat-card-header>
         
                 <mat-card-content>
-                    <img mat-card-image src="assets/chart.png" alt="">
+                    <highcharts-chart
+                    [Highcharts] = "highcharts" 
+                    [options] = resultado.chart>
+                </highcharts-chart> 
                 </mat-card-content>
                 
                 <mat-card-actions>
@@ -116,15 +120,17 @@
     </div>
     
 
-    <!-- <div class="ColombiaContainer">
+    <!-- <div class="ColombiaContainer" >
         <div >
             <div > <div class="Title">Colombia</div></div>
         
         </div>
         
-        <div class="cardContainer"><div class="cards" >
+        <div class="cardContainer" *ngFor="let resultado of array3; let i= index">
+            
+            <div class="cards" >
         
-            <mat-card >
+            <mat-card *ngIf="resultado.region.includes('Colombia')" >
                 <mat-card-header>
                     
                     <mat-card-title></mat-card-title>
@@ -140,8 +146,11 @@
                     <button mat-button>Details</button>
                 </mat-card-actions>
             </mat-card>
-        </div> -->
-    </div>
+            
+
+
+        </div>
+    </div> -->
     
 </div>
 
