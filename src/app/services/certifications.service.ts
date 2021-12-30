@@ -18,8 +18,8 @@ private httpHeaders = new HttpHeaders;
   
   getCertifications ():Observable<any>  {
     const body = {
-      modulo: "Kind_of_Formation"
       
+      modulo:"Kind_of_Formation"
     }
     return this.http.post<any>(this.path,body,{
       headers:this.httpHeaders
@@ -43,5 +43,7 @@ private httpHeaders = new HttpHeaders;
       headers:this.httpHeaders
     })
   }
+
+  
 
 }
