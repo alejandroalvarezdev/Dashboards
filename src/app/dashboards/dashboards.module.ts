@@ -9,6 +9,7 @@ import { MaterialModule } from '../material/material.module';
 
 import { HighchartsChartModule } from 'highcharts-angular';
 import { FormsModule } from '@angular/forms';
+import { VersusComponent } from './pages/versus/versus.component';
 
 
 
@@ -19,6 +20,7 @@ import { FormsModule } from '@angular/forms';
     ObjectiveComponent,
     RegionComponent,
     HomeDashboardsComponent,
+    VersusComponent,
     
   ],
   imports: [

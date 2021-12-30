@@ -6,6 +6,7 @@ import { ObjectiveComponent } from './pages/objective/objective.component';
 import { RegionComponent } from './pages/region/region.component';
 
 import { HomeDashboardsComponent } from './pages/home-dashboards/home-dashboards.component';
+import { VersusComponent } from './pages/versus/versus.component';
 
 const routes:Routes =[
   {
@@ -25,6 +26,11 @@ const routes:Routes =[
       {
         path: 'region',
         component:RegionComponent
+      },
+
+      {
+        path: 'main/:id',
+        component: VersusComponent
       },
 
       {

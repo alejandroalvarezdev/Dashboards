@@ -31,7 +31,7 @@ achievedNumber:Number = 0;
           //console.log(this._getObjinfo());
           //console.log(this._getReginfo());
         this._getReginfo();
-        console.log(this.achievedNumber);
+        
         this.setChart();
         
         });
@@ -58,11 +58,16 @@ achievedNumber:Number = 0;
         )
           ? 0
           : this.region_percent(this.objective_obj['kof_objective1'][it_obj]),
+        not_achieved: isNaN(
+            this.region_percent(this.objective_obj['kof_objective1'][it_obj])
+          )
+            ? 0
+            : (-1*(this.region_percent(this.objective_obj['kof_objective1'][it_obj])-100)),
       });
     }
     this.arraytmp = tmp;
     this.arraytmp.forEach(element => {
-      // console.warn(element);
+        console.warn("Objective Data",element);
       let data = {
         name: element.reg_name, 
         array: [element.reg_name, element.achieved],
@@ -77,10 +82,11 @@ achievedNumber:Number = 0;
       this.arrayHighChart.push(data);
       
     });
-    console.log(tmp);
+    // console.log(tmp);
     
-    console.warn(this.arrayHighChart); // data de Highcharts 
-    return console.warn(tmp);
+    // console.warn(this.arrayHighChart); 
+    
+    return ;
     
   }
   region_percent(itm_obj: any) {
@@ -319,11 +325,13 @@ achievedNumber:Number = 0;
           
           data: [
             ['complete',element.achieved],
+            
   
             {
-              y: 30,
+              name:'faltante',
+              y: element.not_achieved,
               dataLabels: {
-                enabled: false,
+                enabled: true,
               },
             },
           ],
@@ -341,7 +349,7 @@ achievedNumber:Number = 0;
     
   });
 
-  console.warn("!!!!!!!!!!!!!!!!!!!!",this.array3);
+  console.warn("HighchartsObject",this.array3);
   
   }
 }
