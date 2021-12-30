@@ -8,6 +8,7 @@ import { RegionComponent } from './pages/region/region.component';
 import { HomeDashboardsComponent } from './pages/home-dashboards/home-dashboards.component';
 import { VersusComponent } from './pages/versus/versus.component';
 
+
 const routes:Routes =[
   {
     path:'',

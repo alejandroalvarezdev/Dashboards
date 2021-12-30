@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CertificationsService } from 'src/app/services/certifications.service'
 import * as Highcharts from 'highcharts';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -16,9 +17,11 @@ certification_object: any;
 arraytmp:Array<any>=[];
 arrayHighChart:Array<any>=[];
 achievedNumber:Number = 0;
+
   
 
-  constructor(private certificationService: CertificationsService) { }
+  constructor(private certificationService: CertificationsService,
+              private router:Router) { }
 
   ngOnInit(): void {
 
@@ -67,7 +70,7 @@ achievedNumber:Number = 0;
     }
     this.arraytmp = tmp;
     this.arraytmp.forEach(element => {
-        console.warn("Objective Data",element);
+      console.warn("Objective Data",element);
       let data = {
         name: element.reg_name, 
         array: [element.reg_name, element.achieved],
@@ -251,6 +254,10 @@ achievedNumber:Number = 0;
 
     return arr;
   }
+
+  sendurl(id:any){
+    this.router.navigateByUrl(`dashboards/main/${id}`);
+  }
   
   ////////////HighChart
   chartOptions:Highcharts.Options ={};
@@ -343,6 +350,7 @@ achievedNumber:Number = 0;
       name: element.obj_name,
       level: element.obj_level,
       region:element.reg_id,
+      obj_id:element.obj_id,
       chart:this.chartOptions,
     }
     this.array3.push(obj);
