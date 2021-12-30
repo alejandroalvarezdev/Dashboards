@@ -52,7 +52,7 @@
                 </mat-card-content>
                 
                 <mat-card-actions>
-                    <button mat-button>VS</button>
+                    <button mat-button (click)="sendurl(resultado.obj_id)">VS</button>
                     <button mat-button>Details</button>
                 </mat-card-actions>
             </mat-card>
@@ -112,7 +112,7 @@
                 </mat-card-content>
                 
                 <mat-card-actions>
-                    <button mat-button>VS</button>
+                    <button mat-button (click)="sendurl(resultado.obj_id)">VS</button>
                     <button mat-button>Details</button>
                 </mat-card-actions>
             </mat-card>
@@ -160,12 +160,3 @@
 
 
 
-
-
-<!-- <div *ngFor="let result of resultados let i = index">
-    {{i+1}} {{result.Person}}
-</div>
--->
-<!-- <p>{{sumaCert}}</p>
-<p>{{sumMcObj}}</p>
-<p>{{sumCertObj}}</p> -->
