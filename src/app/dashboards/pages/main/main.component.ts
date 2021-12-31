@@ -327,11 +327,7 @@ achievedNumber:Number = 0;
       series: [
         {
           type: 'pie',
-<<<<<<< HEAD
           name: 'Objective',
-=======
-          name: 'Objectives',
->>>>>>> ArturoT
           innerSize: '50%',
           
           data: [
