@@ -36,7 +36,7 @@ export class VersusComponent implements OnInit {
                     });
                   });
                 });
-               }
+              }
   
   
   ngOnInit(): void {

@@ -85,7 +85,7 @@ achievedNumber:Number = 0;
       this.arrayHighChart.push(data);
       
     });
-    // console.log(tmp);
+    // console.log("Información General",tmp);
     
     // console.warn(this.arrayHighChart); 
     
@@ -327,7 +327,7 @@ achievedNumber:Number = 0;
       series: [
         {
           type: 'pie',
-          name: 'Browser share',
+          name: 'Objectives',
           innerSize: '50%',
           
           data: [
@@ -338,7 +338,7 @@ achievedNumber:Number = 0;
               name:'faltante',
               y: element.not_achieved,
               dataLabels: {
-                enabled: true,
+                enabled: false,
               },
             },
           ],
