@@ -85,7 +85,7 @@ achievedNumber:Number = 0;
       this.arrayHighChart.push(data);
       
     });
-    // console.log(tmp);
+    // console.log("Información General",tmp);
     
     // console.warn(this.arrayHighChart); 
     
@@ -327,7 +327,11 @@ achievedNumber:Number = 0;
       series: [
         {
           type: 'pie',
+<<<<<<< HEAD
           name: 'Objective',
+=======
+          name: 'Objectives',
+>>>>>>> ArturoT
           innerSize: '50%',
           
           data: [
