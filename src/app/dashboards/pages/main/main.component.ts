@@ -327,7 +327,7 @@ achievedNumber:Number = 0;
       series: [
         {
           type: 'pie',
-          name: 'Browser share',
+          name: 'Objective',
           innerSize: '50%',
           
           data: [
@@ -338,7 +338,7 @@ achievedNumber:Number = 0;
               name:'faltante',
               y: element.not_achieved,
               dataLabels: {
-                enabled: true,
+                enabled: false,
               },
             },
           ],
