@@ -85,7 +85,7 @@ achievedNumber:Number = 0;
       this.arrayHighChart.push(data);
       
     });
-    // console.log(tmp);
+    // console.log("Información General",tmp);
     
     // console.warn(this.arrayHighChart); 
     
