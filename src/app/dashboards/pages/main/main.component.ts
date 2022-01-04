@@ -32,6 +32,9 @@ achievedNumber:Number = 0;
         this.certificationService.getCertifications().subscribe((resp) => {
           this.certification_object = JSON.parse(JSON.stringify(resp));
           //console.log(this._getObjinfo());
+
+          console.log("Im a Objectuve Object",this.objective_obj);
+          
           //console.log(this._getReginfo());
         this._getReginfo();
         
@@ -316,6 +319,7 @@ achievedNumber:Number = 0;
               fontWeight: 'bold',
               color: 'white',
               fontSize:'7px'
+              
             },
           },
           startAngle: -90,

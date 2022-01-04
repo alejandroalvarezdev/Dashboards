@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute,Params, Router} from "@angular/router"
+import * as Highcharts from 'highcharts';
 import { CertificationsService } from 'src/app/services/certifications.service';
 @Component({
   selector: 'app-versus',
@@ -11,6 +12,8 @@ export class VersusComponent implements OnInit {
   objective_obj: any;
   meeting_list: any;
   certification_object: any;
+
+  arrayVs:Array<any>=[];
   //logica para match de detalles
   details_mc:any;
   datails_kof:any;
@@ -18,31 +21,45 @@ export class VersusComponent implements OnInit {
   //logica para match de detalles
   constructor(private _activeRoute:ActivatedRoute,
               private router:Router,private certificationService: CertificationsService) {
-                this.certificationService.getMeetingCourse().subscribe((resp) => {
-                  this.meeting_list = JSON.parse(JSON.stringify(resp));
-                  this.certificationService.getObjective().subscribe((resp) => {
-                    this.objective_obj = JSON.parse(JSON.stringify(resp));
-                    this.certificationService.getCertifications().subscribe((resp) => {
-                      this.certification_object = JSON.parse(JSON.stringify(resp));
-                      //logica detalles
-                      this.details_mc = this.search(this.meeting_list,'kof_meeting_course','Objective.ID',this.idObj)
-                      this.datails_kof = this.search(this.certification_object,'kind_of_formation','Objective.ID',this.idObj)
-                      this.current_obj = this.search(this.objective_obj,'kof_objective1','Zoho_ID',this.idObj);
-                      //logica detalles
-                      //vs
-                      console.log(this.make_vs_(this.current_obj, this.details_mc, this.datails_kof));
-                      //this.make_vs_kof(this.details_mc);
-                      //vs
-                    });
-                  });
-                });
+                
+                
               }
   
   
   ngOnInit(): void {
     this._activeRoute.paramMap.subscribe((params: Params) => {   this.idObj = params.get('id');  
     });
-    console.warn(this.idObj);
+    console.warn("Id Obj",this.idObj);
+    this.certificationService.getMeetingCourse().subscribe((resp) => {
+      this.meeting_list = JSON.parse(JSON.stringify(resp));
+      this.certificationService.getObjective().subscribe((resp) => {
+        this.objective_obj = JSON.parse(JSON.stringify(resp));
+        this.certificationService.getCertifications().subscribe((resp) => {
+          this.certification_object = JSON.parse(JSON.stringify(resp));
+          //logica detalles
+          this.details_mc = this.search(this.meeting_list,'kof_meeting_course','Objective.ID',this.idObj)
+          this.datails_kof = this.search(this.certification_object,'kind_of_formation','Objective.ID',this.idObj)
+          this.current_obj = this.search(this.objective_obj,'kof_objective1','Zoho_ID',this.idObj);
+          //logica detalles
+          //vs
+          this.make_vs_(this.current_obj, this.details_mc, this.datails_kof);
+
+          console.warn(this.objective_obj);
+          
+
+        
+          
+          //this.make_vs_kof(this.details_mc);
+          //vs
+        });
+      });
+    });
+
+    // this.setChart(this.arrayVs[0].certs.achieved);
+    
+    
+
+    
     
     
   }
@@ -73,7 +90,10 @@ export class VersusComponent implements OnInit {
   make_vs_(current_ob:any,mc_list:any,certs_list:any){
     var mc = this.mk_vs_mc(current_ob,mc_list)
     var certs = this.mk_vs_certs(current_ob,certs_list)
-    return {'mc':{'achieved':mc,'not_achieved':(100-mc)},'certs':{'achieved':certs,'not_achieved':(100-certs)}};
+    let arrayVersus = []; 
+        arrayVersus.push({'mc':{'achieved':mc,'not_achieved':(100-mc)},'certs':{'achieved':certs,'not_achieved':(100-certs)}})
+        this.setChart(arrayVersus)
+  
   }
   mk_vs_mc(current_ob:any,mc_list:any){
     var total_mc = 0;
@@ -119,4 +139,106 @@ export class VersusComponent implements OnInit {
   }
   return total_mc
   }
+
+////////////HighCharts
+
+
+
+  // this.arrayVs.forEach((element: any) => {
+    Highcharts = Highcharts;
+    chartOptions={};
+    chart:any;
+  setChart(objeto:any){
+
+    
+    console.warn("objeto", objeto);
+    
+    
+    
+    
+
+  this.chartOptions = { 
+    chart: {
+      type: "column"
+    },
+    title: {
+      text: "Versus "
+    },
+    subtitle: {
+      text:
+        'La siguiente grafica representa el comparativo de lo que se espera contra lo que se ha logrado en el Objetivo'
+    },
+    xAxis: {
+      type: "category"
+    },
+    yAxis: {
+      title: {
+        text: "Total percent Objective"
+      }
+    },
+    legend: {
+      enabled: false
+    },
+    plotOptions: {
+      column: {
+        borderWidth: 0,
+        dataLabels: {
+          enabled: true,
+          format: "{point.y:.1f}%"
+        },
+        grouping: true
+      }
+    },
+  
+    tooltip: {
+      headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+      pointFormat:
+        '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>'
+    },
+  
+    series: [
+      
+
+      {
+        name: "azules",
+        data: [
+          {
+            name: "Certs",
+            y:objeto[0].certs.achieved,
+            drilldown: "Maxcom"
+          },
+          {
+            name: "MC",
+            y: objeto[0].mc.achieved,
+            drilldown: "MC"
+          },
+        
+        ]
+      },
+      {
+        name: "negras",
+        pointPadding: 0.2,
+        data: [
+          {
+            name: "Certs",
+            y: objeto[0].certs.not_achieved,
+            drilldown: "Safari"
+          },
+          {
+            name: "MC",
+            y: objeto[0].mc.not_achieved,
+            drilldown: "Opera"
+          },
+          
+        ]
+      }
+    ],
+    
+  };
+      this.chart = this.chartOptions;
+  
+// });
+} 
+
 }
+
