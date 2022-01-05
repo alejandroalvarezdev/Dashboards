@@ -284,6 +284,10 @@ achievedNumber:Number = 0;
       
       
       chart: {
+        backgroundColor: '#F7F7F7',
+        borderColor: '#1b6463',
+        borderRadius: 5,
+        borderWidth: 0,
         plotBackgroundColor: undefined,
         plotBorderWidth: 0,
         plotShadow: false,
@@ -316,9 +320,11 @@ achievedNumber:Number = 0;
             enabled: true,
             distance: -50,
             style: {
-              fontWeight: 'bold',
+              fontWeight: 'light',
               color: 'white',
-              fontSize:'7px'
+              fontSize:'10px',
+              fontFamily: 'Lato'
+              
               
             },
           },
@@ -332,15 +338,23 @@ achievedNumber:Number = 0;
         {
           type: 'pie',
           name: 'Objective',
+          // color: '#00B8AA',
           innerSize: '50%',
           
           data: [
-            ['complete',element.achieved],
+              {
+                y:element.achieved,
+                name:'complete',
+                color:'#1b6463',
+
+              },
+              
             
   
             {
               name:'faltante',
               y: element.not_achieved,
+              color: '#37393a',
               dataLabels: {
                 enabled: false,
               },
@@ -348,6 +362,9 @@ achievedNumber:Number = 0;
           ],
         },
       ],
+      credits: {
+        enabled: false
+      },
     };
     
     let obj = {

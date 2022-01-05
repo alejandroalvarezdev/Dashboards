@@ -159,6 +159,7 @@ export class VersusComponent implements OnInit {
 
   this.chartOptions = { 
     chart: {
+      backgroundColor: '#F7F7F7',
       type: "column"
     },
     title: {
@@ -205,11 +206,13 @@ export class VersusComponent implements OnInit {
           {
             name: "Certs",
             y:objeto[0].certs.achieved,
+            color: '#37b39c',
             drilldown: "Maxcom"
           },
           {
             name: "MC",
             y: objeto[0].mc.achieved,
+            color: '#37b39c',
             drilldown: "MC"
           },
         
@@ -222,17 +225,24 @@ export class VersusComponent implements OnInit {
           {
             name: "Certs",
             y: objeto[0].certs.not_achieved,
+            color: '#37393a',
             drilldown: "Safari"
           },
           {
             name: "MC",
             y: objeto[0].mc.not_achieved,
+            color: '#37393a',
             drilldown: "Opera"
           },
           
         ]
       }
+      
     ],
+    credits: {
+      enabled: false
+    }
+    
     
   };
       this.chart = this.chartOptions;

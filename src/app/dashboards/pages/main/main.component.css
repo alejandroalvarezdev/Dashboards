@@ -32,6 +32,8 @@
     color: #fff;
     font-family: 'Lato', sans-serif;
 }
+
+
 .mat-button, .mat-icon-button, .mat-stroked-button, .mat-flat-button {
     box-sizing: border-box;
     position: relative;
@@ -62,9 +64,13 @@
 
 .Title{
     color: #1b6463;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Lato', sans-serif ;
+    text-shadow: -1px 0 #37b39c, 0 1px #37b39c, 1px 0 #37b39c, 0 -1px #37b39c;
+    opacity: 0.8;
     font-size: 2em;
     margin: 1em;
+    font-weight: bold;
+    letter-spacing: 3px;
 }
 .cards{
     height: fit-content;

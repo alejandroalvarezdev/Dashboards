@@ -67,4 +67,51 @@
     height: 24px;
     width: 24px;
     border-radius: 1px;
+    color: #37393a;
 }
+
+.mat-button{
+    background-color: #dbd6d6;
+    border-radius: 10em;
+    width: 1em;
+    min-width: 2.7em;
+    display: flex;
+    justify-content: center;
+    
+}
+.mat-icon-button {
+    padding: 0;
+    margin-left: 0.2em;
+    min-width: 0;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    background-color: #dbd6d6;
+}
+
+.beyondContainer{
+    display: flex;
+    justify-content: flex-start;
+    margin: 1em;
+}
+
+.beyondContainer img{
+    width: 30px;
+}
+
+.slogan h2{
+    font-family: 'Nova Square', cursive;
+    color:rgb(55, 179, 156);
+    margin-left: 0.3em;
+}
+
+.slogan hr {
+    border: 0;
+    height: 1px;
+    border-radius: 5px;
+    background-image: linear-gradient(to right, rgba(55, 179, 156, 0.281), rgba(55, 179, 156, 0.726), rgba(55, 179, 156, 0.281));
+}
+
+

@@ -4,7 +4,7 @@
     <mat-sidenav #sidenav mode="push" opened> 
         <mat-toolbar> 
             <span>Dashboards</span>
-            <button mat-icon-button (click)="sidenav.toggle()" >
+            <button mat-icon-button (click)="sidenav.toggle()">
                 <mat-icon>menu</mat-icon>
             </button>
         </mat-toolbar>
@@ -12,7 +12,7 @@
         <mat-nav-list>
             <a routerLink="/dashboards/main" mat-list-item (click)="sidenav.toggle()" >  <mat-icon mat-list-icon>insights</mat-icon> <span>Main Dashboard </span> </a>
             <a routerLink="/dashboards/objective" mat-list-item (click)="sidenav.toggle()" >  <mat-icon mat-list-icon>my_location</mat-icon> <span>Por Objetivo </span> </a>
-            <a routerLink="/dashboards/region" mat-list-item (click)="sidenav.toggle()" >  <mat-icon mat-list-icon>place</mat-icon> <span>Por Region </span> </a>
+            <!-- <a routerLink="/dashboards/region" mat-list-item (click)="sidenav.toggle()" >  <mat-icon mat-list-icon>place</mat-icon> <span>Por Region </span> </a> -->
         </mat-nav-list>
 
     </mat-sidenav>
@@ -22,7 +22,12 @@
             <mat-icon>menu</mat-icon>
         </button>    
     </mat-toolbar>
-    <h2>Beyond Technology</h2>
+    <div class="beyondContainer">
+        <div><img src="assets/beyond.png" alt=""></div>
+        <div class="slogan"><h2>Beyond Technology </h2> <hr> </div>
+        
+    </div>
+    
     <router-outlet></router-outlet>
 </mat-sidenav-container>
 
