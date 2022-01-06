@@ -10,6 +10,7 @@ import { MaterialModule } from '../material/material.module';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { FormsModule } from '@angular/forms';
 import { VersusComponent } from './pages/versus/versus.component';
+import { DetailsComponent } from './pages/details/details.component';
 
 
 
@@ -21,6 +22,7 @@ import { VersusComponent } from './pages/versus/versus.component';
     RegionComponent,
     HomeDashboardsComponent,
     VersusComponent,
+    DetailsComponent,
     
   ],
   imports: [

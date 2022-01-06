@@ -44,7 +44,7 @@ export class VersusComponent implements OnInit {
           //vs
           this.make_vs_(this.current_obj, this.details_mc, this.datails_kof);
 
-          console.warn(this.objective_obj);
+          console.warn("Objetivo Actual",this.current_obj);
           
 
         
@@ -93,7 +93,7 @@ export class VersusComponent implements OnInit {
     let arrayVersus = []; 
         arrayVersus.push({'mc':{'achieved':mc,'not_achieved':(100-mc)},'certs':{'achieved':certs,'not_achieved':(100-certs)}})
         this.setChart(arrayVersus)
-  
+
   }
   mk_vs_mc(current_ob:any,mc_list:any){
     var total_mc = 0;

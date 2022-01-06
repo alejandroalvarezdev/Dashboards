@@ -1,0 +1,57 @@
+.demo-table {
+    width: 60%;
+}
+.container{
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 3em;
+    }
+
+.mainDetails{
+    margin: 1em;
+}
+
+p{
+    color: #1b6463;
+    font-family: 'Lato', sans-serif ;
+    opacity: 0.8;
+    font-size: 1em;
+    margin: 1em;
+    letter-spacing: 3px;
+}
+
+.mat-header-cell {
+    background-color:  #1b6463 !important ;
+    color: white !important;
+    font-family: 'Lato', sans-serif ;
+    border: hidden !important;
+    
+}
+
+
+.mat-column-Name {
+    padding-left: 16px;
+    font-size: 20px;
+    color: #1b6463;
+    background-color: white;
+    font-family: 'Lato', sans-serif ;
+    font-size: 1em;
+    }
+
+.mat-column-Quantity {
+    font-style: italic;
+    color: #1b6463;
+    background-color: white;
+    font-family: 'Lato', sans-serif ;
+    font-size: 1em;
+    }
+
+.mat-column-Notes {
+    width: fit-content;
+    text-align: center;
+    font-weight: bold;
+    color: #1b6463;
+    background-color: white;
+    font-family: 'Lato', sans-serif ;
+
+    }

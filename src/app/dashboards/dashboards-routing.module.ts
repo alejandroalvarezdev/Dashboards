@@ -7,6 +7,7 @@ import { RegionComponent } from './pages/region/region.component';
 
 import { HomeDashboardsComponent } from './pages/home-dashboards/home-dashboards.component';
 import { VersusComponent } from './pages/versus/versus.component';
+import { DetailsComponent } from './pages/details/details.component';
 
 
 const routes:Routes =[
@@ -32,6 +33,11 @@ const routes:Routes =[
       {
         path: 'main/:id',
         component: VersusComponent
+      },
+
+      {
+        path: 'main/details/:id',
+        component: DetailsComponent
       },
 
       {

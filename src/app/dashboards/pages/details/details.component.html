@@ -1,0 +1,56 @@
+
+<div class="mainDetails">
+
+    <p *ngFor="let item of current_obj">
+        Name: {{item.Name}}
+    </p>
+    
+    <p *ngFor="let item of current_obj">
+        Level: {{item.Level}}
+    </p>
+    
+    <p *ngFor="let item of current_obj">
+        Region: {{item.Region}}
+    </p>
+
+</div>
+
+
+
+<!-- 
+<p *ngFor="let item of current_obj_TabularCert; let i= index">
+    {{item.Certification_Name}}
+</p> -->
+
+<div class="container">
+
+    <table mat-table [dataSource]=" current_obj_TabularCert" class="mat-elevation-z8 demo-table">
+        <!-- Position Column -->
+        <ng-container matColumnDef="Name">
+          <th mat-header-cell *matHeaderCellDef> Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.Certification_Name}} </td>
+        </ng-container>
+    
+        <!-- Name Column -->
+        <ng-container matColumnDef="Quantity">
+          <th mat-header-cell *matHeaderCellDef> Quantity </th>
+          <td mat-cell *matCellDef="let element"> {{element.Quantity}} </td>
+        </ng-container>
+    
+        <!-- Weight Column -->
+        <ng-container matColumnDef="Notes">
+          <th mat-header-cell *matHeaderCellDef> Notes </th>
+          <td mat-cell *matCellDef="let element"> {{element.Notes}} </td>
+        </ng-container>
+    
+        
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+</div>
+
+
+
+

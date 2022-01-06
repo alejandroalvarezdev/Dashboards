@@ -73,7 +73,7 @@ achievedNumber:Number = 0;
     }
     this.arraytmp = tmp;
     this.arraytmp.forEach(element => {
-      console.warn("Objective Data",element);
+      // console.warn("Objective Data",element);
       let data = {
         name: element.reg_name, 
         array: [element.reg_name, element.achieved],
@@ -260,6 +260,10 @@ achievedNumber:Number = 0;
 
   sendurl(id:any){
     this.router.navigateByUrl(`dashboards/main/${id}`);
+  }
+
+  sendDetails(id:any){
+    this.router.navigateByUrl(`dashboards/main/details/${id}`);
   }
   
   ////////////HighChart
