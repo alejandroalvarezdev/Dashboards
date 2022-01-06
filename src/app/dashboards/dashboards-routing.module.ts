@@ -41,6 +41,17 @@ const routes:Routes =[
       },
 
       {
+        path: 'objective/:id',
+        component: VersusComponent
+      },
+
+      {
+        path: 'objective/details/:id',
+        component: DetailsComponent
+      },
+
+
+      {
         path:'**',
         component:MainComponent
       }

@@ -21,10 +21,12 @@
                 </mat-card-content>
                 
                 <mat-card-actions>
-                    <button mat-button>VS</button>
-                    <button mat-button>Details</button>
+                    <button mat-button (click)="sendurl(resultado.obj_id)">VS</button>
+                    <button mat-button (click)="sendDetails(resultado.obj_id)">Details</button>
                 </mat-card-actions>
+                
             </mat-card>
+            <router-outlet></router-outlet>
         </div>
     
         

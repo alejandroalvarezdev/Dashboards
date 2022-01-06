@@ -1,6 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
 import { CertificationsService } from 'src/app/services/certifications.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-objective',
@@ -17,7 +18,7 @@ arrayHighChart:Array<any>=[];
 achievedNumber:Number = 0;
   
 
-  constructor(private certificationService:CertificationsService) { }
+  constructor(private certificationService:CertificationsService,private router:Router) { }
 
   ngOnInit(): void {
 
@@ -250,6 +251,13 @@ achievedNumber:Number = 0;
 
     return arr;
   }
+  sendurl(id:any){
+    this.router.navigateByUrl(`dashboards/objective/${id}`);
+  }
+
+  sendDetails(id:any){
+    this.router.navigateByUrl(`dashboards/objective/details/${id}`);
+  }
   
   ////////////HighChart
   chartOptions:Highcharts.Options ={};
@@ -273,6 +281,10 @@ achievedNumber:Number = 0;
       
       
       chart: {
+        backgroundColor: '#F7F7F7',
+        borderColor: '#1b6463',
+        borderRadius: 5,
+        borderWidth: 0,
         plotBackgroundColor: undefined,
         plotBorderWidth: 0,
         plotShadow: false,
@@ -305,9 +317,11 @@ achievedNumber:Number = 0;
             enabled: true,
             distance: -50,
             style: {
-              fontWeight: 'bold',
+              fontWeight: 'light',
               color: 'white',
-              fontSize:'0.7em'
+              fontSize:'10px',
+              fontFamily: 'Lato'
+              
             },
           },
           startAngle: -90,
@@ -323,25 +337,36 @@ achievedNumber:Number = 0;
           innerSize: '50%',
           
           data: [
-            ['complete',element.achieved],
-            
-  
             {
-              name:'faltante',
-              y: element.not_achieved,
-              dataLabels: {
-                enabled: true,
-              },
+              y:element.achieved,
+              name:'complete',
+              color:'#1b6463',
+
             },
-          ],
+            
+          
+
+          {
+            name:'faltante',
+            y: element.not_achieved,
+            color: '#37393a',
+            dataLabels: {
+              enabled: false,
+            },
+          },
+        ],
         },
       ],
+      credits: {
+        enabled: false
+      },
     };
     
     let obj = {
       name: element.obj_name,
       level: element.obj_level,
       region:element.reg_id,
+      obj_id:element.obj_id,
       chart:this.chartOptions,
     }
     this.array3.push(obj);
