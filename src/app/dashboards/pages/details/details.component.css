@@ -3,9 +3,19 @@
 }
 .container{
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
     margin-left: 3em;
     }
+
+h3{
+    color: #1b6463;
+    font-family: 'Lato', sans-serif ;
+    opacity: 0.8;
+    font-size: 1em;
+    margin: 1.5em;
+    letter-spacing: 3px;
+}
 
 .mainDetails{
     margin: 1em;

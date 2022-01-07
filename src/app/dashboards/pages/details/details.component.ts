@@ -19,6 +19,7 @@ export class DetailsComponent implements OnInit {
   datails_kof:any;
   current_obj:any;
   current_obj_TabularCert:any; 
+  current_obj_TabularMc:any; 
   displayedColumns: string[] = ['Name', 'Quantity', 'Notes'];
   flagSpinner:boolean = true; 
   
@@ -53,7 +54,10 @@ console.warn("Objetivo Actual 2 ",this.current_obj);
 console.log("Tabular Read", this.current_obj[0].tabularSections['Certification requirements'] );
 
 this.current_obj_TabularCert = this.current_obj[0].tabularSections['Certification requirements'] ; 
+this.current_obj_TabularMc = this.current_obj[0].tabularSections['Meeting/Course requirements']
 console.log("TABULAR", this.current_obj_TabularCert);
+console.log("Tabular Mc", this.current_obj_TabularMc);
+
 
 var dataSource:any =  this.current_obj_TabularCert;
 

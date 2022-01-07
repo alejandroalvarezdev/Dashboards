@@ -27,6 +27,8 @@
 
 <div class="container">
 
+    <h3>Certifications</h3>
+
     <table mat-table [dataSource]=" current_obj_TabularCert" class="mat-elevation-z8 demo-table">
         <!-- Position Column -->
         <ng-container matColumnDef="Name">
@@ -44,6 +46,34 @@
         <ng-container matColumnDef="Notes">
           <th mat-header-cell *matHeaderCellDef> Notes </th>
           <td mat-cell *matCellDef="let element"> {{element.Notes}} </td>
+        </ng-container>
+    
+        
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <br>
+
+    <h3>Meeting / Courses</h3>
+    <table mat-table [dataSource]=" current_obj_TabularMc" class="mat-elevation-z8 demo-table">
+        <!-- Position Column -->
+        <ng-container matColumnDef="Name">
+          <th mat-header-cell *matHeaderCellDef> Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.M_C_Name1}} </td>
+        </ng-container>
+    
+        <!-- Name Column -->
+        <ng-container matColumnDef="Quantity">
+          <th mat-header-cell *matHeaderCellDef> Quantity </th>
+          <td mat-cell *matCellDef="let element"> {{element.Quantity1}} </td>
+        </ng-container>
+    
+        <!-- Weight Column -->
+        <ng-container matColumnDef="Notes">
+          <th mat-header-cell *matHeaderCellDef> Notes </th>
+          <td mat-cell *matCellDef="let element"> {{element.Notes1}} </td>
         </ng-container>
     
         
