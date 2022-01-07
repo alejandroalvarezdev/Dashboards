@@ -11,6 +11,7 @@ import { HighchartsChartModule } from 'highcharts-angular';
 import { FormsModule } from '@angular/forms';
 import { VersusComponent } from './pages/versus/versus.component';
 import { DetailsComponent } from './pages/details/details.component';
+import { SpinnerComponent } from './pages/spinner/spinner.component';
 
 
 
@@ -23,6 +24,7 @@ import { DetailsComponent } from './pages/details/details.component';
     HomeDashboardsComponent,
     VersusComponent,
     DetailsComponent,
+    SpinnerComponent,
     
   ],
   imports: [

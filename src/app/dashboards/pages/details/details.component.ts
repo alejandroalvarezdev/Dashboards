@@ -20,6 +20,7 @@ export class DetailsComponent implements OnInit {
   current_obj:any;
   current_obj_TabularCert:any; 
   displayedColumns: string[] = ['Name', 'Quantity', 'Notes'];
+  flagSpinner:boolean = true; 
   
 
   constructor(private _activeRoute:ActivatedRoute,
@@ -59,7 +60,7 @@ var dataSource:any =  this.current_obj_TabularCert;
 
 
 
-
+this.flagSpinner = false; 
 
 //this.make_vs_kof(this.details_mc);
 //vs

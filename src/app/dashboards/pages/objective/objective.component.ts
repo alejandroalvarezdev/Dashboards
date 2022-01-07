@@ -16,6 +16,7 @@ certification_object: any;
 arraytmp:Array<any>=[];
 arrayHighChart:Array<any>=[];
 achievedNumber:Number = 0;
+flagSpinner:boolean = true;
   
 
   constructor(private certificationService:CertificationsService,private router:Router) { }
@@ -33,6 +34,7 @@ achievedNumber:Number = 0;
         this._getReginfo();
         
         this.setChart();
+        this.flagSpinner=false; 
         
         });
       });

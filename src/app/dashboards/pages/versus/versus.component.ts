@@ -12,6 +12,7 @@ export class VersusComponent implements OnInit {
   objective_obj: any;
   meeting_list: any;
   certification_object: any;
+  flagSpinner:boolean = true; 
 
   arrayVs:Array<any>=[];
   //logica para match de detalles
@@ -46,6 +47,7 @@ export class VersusComponent implements OnInit {
 
           console.warn("Objetivo Actual",this.current_obj);
           
+          this.flagSpinner = false; 
 
         
           

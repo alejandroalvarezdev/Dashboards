@@ -17,6 +17,7 @@ certification_object: any;
 arraytmp:Array<any>=[];
 arrayHighChart:Array<any>=[];
 achievedNumber:Number = 0;
+flagSpinner:boolean = true; 
 
   
 
@@ -39,6 +40,7 @@ achievedNumber:Number = 0;
         this._getReginfo();
         
         this.setChart();
+        this.flagSpinner = false;
         
         });
       });
