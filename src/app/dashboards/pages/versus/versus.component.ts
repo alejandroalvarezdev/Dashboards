@@ -90,15 +90,17 @@ export class VersusComponent implements OnInit {
     return results;
   }
   make_vs_(current_ob:any,mc_list:any,certs_list:any){
-    var mc = this.mk_vs_mc(current_ob,mc_list)
-    var certs = this.mk_vs_certs(current_ob,certs_list)
-    let arrayVersus = []; 
-        arrayVersus.push({'mc':{'achieved':mc,'not_achieved':(100-mc)},'certs':{'achieved':certs,'not_achieved':(100-certs)}})
-        this.setChart(arrayVersus)
-
+    var vs_mc = this.mk_vs_mc(current_ob,mc_list)
+    var mc = parseInt(vs_mc[0]+'');
+    var vs_certs = this.mk_vs_certs(current_ob,certs_list)
+    console.warn(vs_certs);
+    var certs = parseInt(vs_certs[0]+'');
+    return {'mc':{'achieved':mc,'not_achieved':(100 - mc),'vs':vs_mc[1]},'certs':{'achieved':certs,'not_achieved':(100-certs),"vs":vs_certs[1]}};
   }
+  
   mk_vs_mc(current_ob:any,mc_list:any){
     var total_mc = 0;
+    var vs_MC=[];
   if( current_ob[0]["tabularSections"]["Meeting/Course requirements"].length != 0){
     var percent_total = 0
     for(var it=0; it< current_ob[0]["tabularSections"]["Meeting/Course requirements"].length ;it++){
@@ -112,15 +114,18 @@ export class VersusComponent implements OnInit {
         }
       }
       if(percent_req > 0){ 
+        vs_MC.push({"eval":match.length,"obj_q":parseInt(current_ob[0]["tabularSections"]["Meeting/Course requirements"][it]['Quantity1']),"name":current_ob[0]["tabularSections"]["Meeting/Course requirements"][it]['M_C_Name1'],'percent':(percent_req / parseInt(current_ob[0]["tabularSections"]["Meeting/Course requirements"][it]['Quantity1']))})
         percent_total += (percent_req / parseInt(current_ob[0]["tabularSections"]["Meeting/Course requirements"][it]['Quantity1']))
       }
     }
     total_mc += (percent_total / current_ob[0]["tabularSections"]["Meeting/Course requirements"].length)
   }
-  return total_mc
+  console.warn(vs_MC)
+  return [total_mc,vs_MC]
   }
   mk_vs_certs(current_ob:any,cert_list:any){
     var total_mc = 0;
+    var vs_Certs=[];
   if( current_ob[0]["tabularSections"]["Certification requirements"].length != 0){
     var percent_total = 0
     for(var it=0; it< current_ob[0]["tabularSections"]["Certification requirements"].length ;it++){
@@ -134,12 +139,13 @@ export class VersusComponent implements OnInit {
         }
       }
       if(percent_req > 0){ 
+        vs_Certs.push({"eval":match.length,"obj_q":parseInt(current_ob[0]["tabularSections"]["Certification requirements"][it]['Quantity']),"name":current_ob[0]["tabularSections"]["Certification requirements"][it]['Certification_Name'],'percent':(percent_req / parseInt(current_ob[0]["tabularSections"]["Certification requirements"][it]['Quantity']))})
         percent_total += (percent_req / parseInt(current_ob[0]["tabularSections"]["Certification requirements"][it]['Quantity']))
       }
     }
     total_mc += (percent_total / current_ob[0]["tabularSections"]["Certification requirements"].length)
   }
-  return total_mc
+  return [total_mc,vs_Certs]
   }
 
 ////////////HighCharts
