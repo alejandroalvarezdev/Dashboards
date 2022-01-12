@@ -14,8 +14,8 @@ export class VersusComponent implements OnInit {
   certification_object: any;
   vsMcObject:any; 
   vsCertObject:any; 
-  displayedColumns: string[] = ['Se tiene', 'Objetivo', 'Porcentaje'];
-  displayedColumns2:string[] = ['Se tiene', 'Objetivo', 'Porcentaje']
+  displayedColumns: string[] = ['Nombre','Se tiene', 'Objetivo', 'Porcentaje'];
+  displayedColumns2:string[] = ['Nombre','Se tiene', 'Objetivo', 'Porcentaje']
   flagSpinner:boolean = true; 
 
   arrayVs:Array<any>=[];
