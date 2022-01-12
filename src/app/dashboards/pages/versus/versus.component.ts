@@ -12,6 +12,10 @@ export class VersusComponent implements OnInit {
   objective_obj: any;
   meeting_list: any;
   certification_object: any;
+  vsMcObject:any; 
+  vsCertObject:any; 
+  displayedColumns: string[] = ['Se tiene', 'Objetivo', 'Porcentaje'];
+  displayedColumns2:string[] = ['Se tiene', 'Objetivo', 'Porcentaje']
   flagSpinner:boolean = true; 
 
   arrayVs:Array<any>=[];
@@ -44,8 +48,10 @@ export class VersusComponent implements OnInit {
           //logica detalles
           //vs
           this.make_vs_(this.current_obj, this.details_mc, this.datails_kof);
+          this.mk_vs_mc(this.current_obj,this.details_mc)
 
           console.warn("Objetivo Actual",this.current_obj);
+          
           
           this.flagSpinner = false; 
 
@@ -92,10 +98,17 @@ export class VersusComponent implements OnInit {
   make_vs_(current_ob:any,mc_list:any,certs_list:any){
     var vs_mc = this.mk_vs_mc(current_ob,mc_list)
     var mc = parseInt(vs_mc[0]+'');
-    var vs_certs = this.mk_vs_certs(current_ob,certs_list)
-    console.warn(vs_certs);
+    var vs_certs = this.mk_vs_certs(current_ob,certs_list);
+    //Vs Table Object
+    console.warn("VersusCompareMC",vs_mc);
+    this.vsMcObject = vs_mc[1];
+    console.warn("VersusCompareCerts",vs_certs); 
+    this.vsCertObject = vs_certs[1]; 
     var certs = parseInt(vs_certs[0]+'');
-    return {'mc':{'achieved':mc,'not_achieved':(100 - mc),'vs':vs_mc[1]},'certs':{'achieved':certs,'not_achieved':(100-certs),"vs":vs_certs[1]}};
+    let arrayVersus = []; 
+        arrayVersus.push({'mc':{'achieved':mc,'not_achieved':(100 - mc),'vs':vs_mc[1]},'certs':{'achieved':certs,'not_achieved':(100-certs),"vs":vs_certs[1]}})
+        this.setChart(arrayVersus)
+  
   }
   
   mk_vs_mc(current_ob:any,mc_list:any){
@@ -120,7 +133,7 @@ export class VersusComponent implements OnInit {
     }
     total_mc += (percent_total / current_ob[0]["tabularSections"]["Meeting/Course requirements"].length)
   }
-  console.warn(vs_MC)
+  // console.warn("",vs_MC)
   return [total_mc,vs_MC]
   }
   mk_vs_certs(current_ob:any,cert_list:any){
