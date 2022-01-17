@@ -15,7 +15,7 @@ export class VersusComponent implements OnInit {
   vsMcObject:any; 
   vsCertObject:any; 
   displayedColumns: string[] = ['Nombre','Se tiene', 'Objetivo', 'Porcentaje'];
-  displayedColumns2:string[] = ['Nombre','Se tiene', 'Objetivo', 'Porcentaje']
+  displayedColumns2:string[] = ['Person','NameCert','Caducity_date', 'Status', 'Progress']
   flagSpinner:boolean = true; 
 
   arrayVs:Array<any>=[];
@@ -51,6 +51,10 @@ export class VersusComponent implements OnInit {
           this.mk_vs_mc(this.current_obj,this.details_mc)
 
           console.warn("Objetivo Actual",this.current_obj);
+
+          console.log("KoF Data ",this.datails_kof);
+          console.log("MC Data",this.details_mc);
+          
           
           
           this.flagSpinner = false; 
