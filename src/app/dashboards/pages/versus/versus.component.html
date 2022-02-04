@@ -3,6 +3,18 @@
 <ng-template #mainVersus>
 
 <div class="container">
+  <div>
+    <p *ngFor="let item of current_obj">
+      Name: {{item.Name}}
+  </p>
+  
+  <p *ngFor="let item of current_obj">
+      Level: {{item.Level}}
+  </p>
+  
+  <p *ngFor="let item of current_obj">
+      Region: {{item.Region}}
+  </div>
     
 </div>
 <highcharts-chart 

@@ -226,7 +226,7 @@ export class VersusComponent implements OnInit {
       
 
       {
-        name: "azules",
+        name: "obtenido",
         data: [
           {
             name: "Certs",
@@ -244,7 +244,7 @@ export class VersusComponent implements OnInit {
         ]
       },
       {
-        name: "negras",
+        name: "faltante",
         pointPadding: 0.2,
         data: [
           {
